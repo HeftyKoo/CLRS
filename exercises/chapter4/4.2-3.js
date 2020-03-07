@@ -32,29 +32,16 @@ function extendMatrix (arr, addNum) {
   return arr
 }
 
-function minusMatrix (arr, num) {
-  arr = arr.slice(0, arr.length - num)
-
-  for (let i = 0; i < arr.length; i++) {
-    arr[i] = arr[i].slice(0, arr[i].length - num)
-  }
-  return arr
-}
-
 function universalStrassen (arr1, arr2) {
-  const rows = arr1.length
-  if (isP2(rows)) {
-    return strassen(arr1, arr2)
-  } else {
-    const nextRows = nextP2(rows)
-    const num = nextRows - rows
+  let rows = arr1.length >  arr2.length ? arr1.length : arr2.length
+  
+  rows = nextP2(rows)
+  
+  arr1 = extendMatrix(arr1, rows - arr1.length)
+  arr2 = extendMatrix(arr2, rows - arr2.length)
 
-    arr1 = extendMatrix(arr1, num)
-    arr2 = extendMatrix(arr2, num)
-
-    const result = strassen(arr1, arr2)
-    return minusMatrix(result, num)
-  }
+  return strassen(arr1, arr2)
+  
 }
 
-// console.log(universalStrassen([[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5]], [[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5]]))
+console.log(universalStrassen([[1,2,3],[1,2,3],[1,2,3]], [[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5]]))
