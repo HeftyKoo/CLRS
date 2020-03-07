@@ -94,3 +94,5 @@ function strassen (arr1, arr2) {
     return result
   }
 }
+
+exports.strassen = strassen
