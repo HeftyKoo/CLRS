@@ -9,12 +9,12 @@ module.exports = function minHeapify (arr, i, heapSize) {
     smallest = l
   }
 
-  if (r <= heapSize && arr[r] < arr[largest]) {
+  if (r <= heapSize && arr[r] < arr[smallest]) {
     smallest = r
   }
 
   if (smallest !== i) {
     swap(arr, i, smallest)
-    maxHeapify(arr, smallest, heapSize)
+    minHeapify(arr, smallest, heapSize)
   }
 }
