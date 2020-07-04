@@ -1,7 +1,7 @@
 const minHeapify = require('./minHeapify')
 
-function buildMinHeap (arr) {
-  for (let i = Math.floor(arr.length - 1 / 2); i >= 0; i--) {
-    minHeapify(arr, i)
+module.exports = function buildMinHeap (arr, heapSize = arr.length - 1) {
+  for (let i = Math.floor(heapSize / 2); i >= 0; i--) {
+    minHeapify(arr, i, heapSize)
   }
 }

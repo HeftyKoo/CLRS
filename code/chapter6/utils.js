@@ -12,3 +12,9 @@ exports.left = function left (i) {
 exports.right = function right (i) {
   return 2 * (i + 1) + 1 - 1
 }
+
+exports.swap = function (arr, i, j) {
+  const temp = arr[i]
+  arr[i] = arr[j]
+  arr[j] = temp
+}

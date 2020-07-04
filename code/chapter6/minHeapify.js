@@ -1,22 +1,20 @@
 
-const { parent, left, right} = require('./utils')
-module.exports = function minHeapify (arr, i) {
+const { parent, left, right, swap} = require('./utils')
+module.exports = function minHeapify (arr, i, heapSize) {
   const l = left(i)
   const r = right(i)
 
   let smallest = i
-  if (l <= arr.length - 1 && arr[l] < arr[i]) {
+  if (l <= heapSize && arr[l] < arr[i]) {
     smallest = l
   }
 
-  if (r <= arr.length - 1 && arr[r] < arr[largest]) {
+  if (r <= heapSize && arr[r] < arr[largest]) {
     smallest = r
   }
 
   if (smallest !== i) {
-    temp = arr[i]
-    arr[i] = arr[smallest]
-    arr[smallest] = temp
-    maxHeapify(arr, smallest)
+    swap(arr, i, smallest)
+    maxHeapify(arr, smallest, heapSize)
   }
 }

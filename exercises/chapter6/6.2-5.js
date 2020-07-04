@@ -1,5 +1,5 @@
 
-const { parent, left, right} = require('../../code/chapter6/utils')
+const { parent, left, right, swap} = require('../../code/chapter6/utils')
 function maxHeapify (arr, i) {
   while (true) {
     const l = left(i)
@@ -17,12 +17,7 @@ function maxHeapify (arr, i) {
       break
     }
 
-    temp = arr[i]
-    arr[i] = arr[largest]
-    arr[largest] = temp
+    swap(arr, i, largest)
     i = largest
   }
 }
-
-
-maxHeapify([27, 17, 3, 16, 13, 10, 1, 5, 7, 12, 4, 8, 9, 0], 2)

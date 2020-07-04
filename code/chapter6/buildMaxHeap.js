@@ -1,7 +1,7 @@
 const maxHeapify = require('./maxHeapify')
 
-function buildMaxHeap (arr) {
-  for (let i = Math.floor(arr.length - 1 / 2); i >= 0; i--) {
-    maxHeapify(arr, i)
+module.exports = function buildMaxHeap (arr, heapSize = arr.length - 1) {
+  for (let i = Math.floor(heapSize / 2); i >= 0; i--) {
+    maxHeapify(arr, i, heapSize)
   }
 }
