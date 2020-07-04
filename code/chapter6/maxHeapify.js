@@ -1,6 +1,6 @@
 
 const { parent, left, right} = require('./utils')
-function maxHeapify (arr, i) {
+module.exports = function maxHeapify (arr, i) {
   const l = left(i)
   const r = right(i)
 

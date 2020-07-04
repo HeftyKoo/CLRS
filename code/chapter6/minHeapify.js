@@ -1,6 +1,6 @@
 
 const { parent, left, right} = require('./utils')
-function minHeapify (arr, i) {
+module.exports = function minHeapify (arr, i) {
   const l = left(i)
   const r = right(i)
 
