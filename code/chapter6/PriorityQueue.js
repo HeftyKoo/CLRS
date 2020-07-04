@@ -43,4 +43,15 @@ class PriorityQueue {
     this.arr[i] = -Infinity
     this.increaseKey(i, key)
   }
+
+  delete (i) {
+    const heapSize = this.arr.length - 1
+    if (this.arr[i] > this.arr[heapSize]) {
+      this.arr[i] = this.arr[heapSize]
+      maxHeapify(this.arr, i, heapSize - 1)
+    } else {
+      this.increaseKey(i, this.arr[heapSize])
+    }
+    this.arr.length = this.arr.length - 1
+  }
 }
