@@ -1,6 +1,6 @@
 const { swap } = require('../../utils')
 
-function partition (arr, p, r) {
+exports.partition = function partition (arr, p, r) {
   const x = arr[r]
   let i = p - 1
 
@@ -15,10 +15,11 @@ function partition (arr, p, r) {
   return i + 1
 }
 
-function quickSort (arr, p = 0, r = arr.length - 1) {
+exports.quickSort = function quickSort (arr, p = 0, r = arr.length - 1) {
   if (p < r) {
     const q = partition(arr, p, r)
     quickSort(arr, p, q - 1)
     quickSort(arr, q + 1, r)
   }
 }
+
