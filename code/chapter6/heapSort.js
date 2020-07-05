@@ -1,6 +1,6 @@
 const buildMaxHeap = require('./buildMaxHeap')
 const maxHeapify = require('./maxHeapify')
-const { swap } = require('./utils')
+const { swap } = require('../../utils')
 
 function heapSort (arr) {
   buildMaxHeap(arr)

@@ -1,4 +1,5 @@
-const { parent, swap } = require('./utils')
+const { parent } = require('./utils')
+const { swap } = require('../../utils')
 const maxHeapify = require('./maxHeapify')
 
 class PriorityQueue {

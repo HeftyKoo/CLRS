@@ -1,5 +1,6 @@
 
-const { parent, left, right, swap} = require('./utils')
+const { parent, left, right } = require('./utils')
+const { swap } = require('../../utils')
 module.exports = function minHeapify (arr, i, heapSize) {
   const l = left(i)
   const r = right(i)
