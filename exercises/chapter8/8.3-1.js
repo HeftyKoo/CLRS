@@ -1,3 +1,8 @@
+/**
+ * 对相同长度的英文字符串进行排序
+ * 使用基数排序+计数排序实现
+ * @param {*} arr 
+ */
 function stringRadixSort (arr) {
   const max = 'z'.charCodeAt()
   const n = arr[0].length
