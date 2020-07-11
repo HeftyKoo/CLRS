@@ -5,7 +5,7 @@ function insertionSort (arr) {
 
   for (let i = 1; i < arr.length; i++) {
     for (let j = i - 1; j >= 0; j--) {
-      if (arr[j] < arr[j + 1]) {
+      if (arr[j] > arr[j + 1]) {
         const temp = arr[j]
         arr[j] = arr[j + 1]
         arr[j + 1] = temp
@@ -15,5 +15,7 @@ function insertionSort (arr) {
 
   return arr
 }
+
+exports.insertionSort = insertionSort
 
 console.log(insertionSort([1,6,9,4,2,0,5]))
