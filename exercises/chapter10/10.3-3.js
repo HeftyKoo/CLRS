@@ -1,5 +1,5 @@
 // 使用单数组实现双向链表，使用free对象来实现空间回收
-class LinkList {
+module.exports = class LinkList {
   constructor (size) {
     this.linkList = new Array(size)
     this.size = size
@@ -70,6 +70,7 @@ class LinkList {
 
   freeObject (x) {
     this.linkList[x + 2] = this.free
+    this.linkList[this.free + 1] = x
     this.free = x
   }
 }
