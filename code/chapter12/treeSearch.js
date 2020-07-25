@@ -9,3 +9,15 @@ function treeSearch (x, k) {
     return treeSearch(x.right, k)
   }
 }
+
+function iterativeTreeSearch (x, k) {
+  while (x && x.key !== k) {
+    if (k < x.key) {
+      x = x.left
+    } else {
+      x = x.right
+    }
+  }
+
+  return x
+}
