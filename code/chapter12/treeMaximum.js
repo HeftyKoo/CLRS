@@ -1,4 +1,4 @@
-function treeMaximum (x) {
+module.exports = function treeMaximum (x) {
   while (x.right) {
     x = x.right
   }
