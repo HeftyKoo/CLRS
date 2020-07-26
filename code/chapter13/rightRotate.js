@@ -1,4 +1,4 @@
-function rightRotate(tree, y) {
+module.exports = function rightRotate(tree, y) {
   const x = y.left
   y.left = x.right
   if (x.right) {

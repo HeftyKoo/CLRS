@@ -33,33 +33,38 @@ function redBlackTreeInsertFixup (tree, z) {
     if (grandParent) {
       if (z.p === grandParent.left) {
         let y = grandParent.right
-        if (y.color === RED) {
+        if (y && y.color === RED) {
           z.p.color = BLACK
           y.color = BLACK
           grandParent.color = RED
           z = grandParent
-        } else if (z === z.p.right) {
-          z = z.p
-          leftRotate(tree, z)
+        } else {
+          if (z === z.p.right) {
+            z = z.p
+            leftRotate(tree, z)
+          }
+          z.p.color = BLACK
+          grandParent.color = RED
+          rightRotate(tree, grandParent)
         }
-        z.p.color = BLACK
-        grandParent.color = RED
-        rightRotate(tree, grandParent)
       } else {
         let y = grandParent.left
-        if (y.color === RED) {
+        if (y && y.color === RED) {
           z.p.color = BLACK
           y.color = BLACK
           grandParent.color = RED
           z = grandParent
-        } else if (z === z.p.left) {
-          z = z.p
-          rightRotate(tree, z)
+        } else {
+          if ((z === z.p.left)) {
+            z = z.p
+            rightRotate(tree, z)
+          }
+          z.p.color = BLACK
+          grandParent.color = RED
+          leftRotate(tree, grandParent)
         }
-        z.p.color = BLACK
-        grandParent.color = RED
-        leftRotate(tree, grandParent)
       }
     }
   }
+  tree.root.color = BLACK
 }
